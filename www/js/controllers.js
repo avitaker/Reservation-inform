@@ -1,4 +1,50 @@
-angular.module('starter.controllers', [])
+angular.module('app.controllers', [])
+
+.controller('selectModeCtrl', function($scope,$state){
+  function pageListObj(title,titleUrl){
+    this.title=title;
+    this.titleUrl=titleUrl;
+  }
+  $scope.pageList=[
+    new pageListObj('New Entry','newEntry'),
+    new pageListObj('Update Reservation','updateReservation'),
+    new pageListObj('Follow Up','followUp')
+  ];
+  $scope.navigateHere=function(thisPage){
+    $state.go(thisPage);
+  }
+  $scope.thisIsChecked=0;
+  $scope.setPage=function(page){
+    $state.transitionTo(page);
+  }
+})
+
+.controller('newEntryCtrl',function($scope,newResFact){
+  $scope.person={};
+  $scope.buttonOnclick=function(){
+    first=$scope.person.first;
+    last=$scope.person.last;
+    tele=$scope.person.tele;
+    $scope.currentObj=newResFact.makeNewPerson(first,last,tele);
+    newResFact.addToList($scope.currentObj);
+    alert('Done!');
+    $scope.person={};
+  }
+})
+
+.controller('updateReservationCtrl',function($scope,newResFact){
+  $scope.currentList={};
+  $scope.currentList.list=newResFact.personList;
+  $scope.submitOnclick=function(){
+    console.log($scope.currentList.list);
+    for (var l=0;l<$scope.currentList.list.length;l++){
+      if ($scope.currentList.list[l].ready){
+        console.log('this');
+        $scope.currentList.list.splice(i,1);
+      }
+    }
+  }
+})
 
 .controller('DashCtrl', function($scope) {})
 
@@ -10,7 +56,7 @@ angular.module('starter.controllers', [])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-  
+
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
     Chats.remove(chat);

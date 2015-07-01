@@ -1,0 +1,6 @@
+<ion-view view-title="Which Action?">
+  <ion-content>
+    <ion-radio ng-repeat="item in pageList" ng-model="$parent.thisIsChecked" ng-value='item.titleUrl'>{{item.title}}</ion-radio>
+    <button class="button button-block button-balanced" ng-click="setPage(thisIsChecked)">Go</button>
+  </ion-content>
+</ion-view>

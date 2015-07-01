@@ -1,0 +1,21 @@
+<ion-view view-title="New Entry">
+  <ion-content>
+    <div id="name_input" class="list list-inset">
+      <label class="item item-input">
+        <input type="text" placeholder="First Name" ng-model="person.first">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Last Name" ng-model="person.last">
+      </label>
+    </div>
+    <div id="telephone_input" class="list list-inset">
+      <label class="item item-input">
+        <span class="input-label">Telephone</span>
+        <input type="tel" ng-model='person.tele'>
+      </label>
+    </div>
+    <button class="button button-block button-positive" ng-click='buttonOnclick()'>
+      Submit
+    </button>
+  </ion-content>
+</ion-view>
