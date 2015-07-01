@@ -1,4 +1,11 @@
 <ion-view view-title="Follow Up">
   <ion-content>
-    Follow Up
+    <div class="list list-inset" ng-repeat-start="thing in archiveList track by $index">
+      <div class="item item-divider">
+        {{thing.firstName}} {{thing.lastName}}
+      </div>
+    </div>
+    <div ng-repeat-end>
+    </div>
   </ion-content>
+</ion-view>

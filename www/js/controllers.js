@@ -32,18 +32,19 @@ angular.module('app.controllers', [])
   }
 })
 
-.controller('updateReservationCtrl',function($scope,newResFact){
+.controller('updateReservationCtrl',function($scope,newResFact,resArchive){
   $scope.currentList={};
   $scope.currentList.list=newResFact.personList;
-  $scope.submitOnclick=function(){
-    console.log($scope.currentList.list);
-    for (var l=0;l<$scope.currentList.list.length;l++){
-      if ($scope.currentList.list[l].ready){
-        console.log('this');
-        $scope.currentList.list.splice(i,1);
-      }
+  $scope.delete=function($index){
+    if ($scope.currentList.list[$index].ready){
+      resArchive.personList.push($scope.currentList.list[$index]);
+      newResFact.personList.splice($index,1);
     }
   }
+})
+
+.controller("followUpCtrl",function($scope,resArchive){
+  $scope.archiveList=resArchive.personList;
 })
 
 .controller('DashCtrl', function($scope) {})

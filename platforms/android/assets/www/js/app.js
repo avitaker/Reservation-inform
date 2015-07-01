@@ -45,10 +45,9 @@ angular.module('starter', ['ionic', 'app.controllers', 'starter.services'])
     })
     .state('followUp',{
       url:'/followUp',
-      templateUrl:"templates/followUpTMPL.html"
-    }
-
-    );
+      templateUrl:"templates/followUpTMPL.html",
+      controller:"followUpCtrl"
+    });
 
   // setup an abstract state for the tabs directive
   //   .state('tab', {

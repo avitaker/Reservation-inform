@@ -32,9 +32,19 @@ angular.module('app.controllers', [])
   }
 })
 
-.controller('updateReservationCtrl',function($scope,newResFact){
+.controller('updateReservationCtrl',function($scope,newResFact,resArchive){
   $scope.currentList={};
   $scope.currentList.list=newResFact.personList;
+  $scope.delete=function($index){
+    if ($scope.currentList.list[$index].ready){
+      resArchive.personList.push($scope.currentList.list[$index]);
+      newResFact.personList.splice($index,1);
+    }
+  }
+})
+
+.controller("followUpCtrl",function($scope,resArchive){
+  $scope.archiveList=resArchive.personList;
 })
 
 .controller('DashCtrl', function($scope) {})

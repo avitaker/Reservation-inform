@@ -18,6 +18,12 @@ angular.module('starter.services', [])
   return factory;
 })
 
+.factory('resArchive',function(){
+  var factory={};
+  factory.personList=[];
+  return factory;
+})
+
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 
