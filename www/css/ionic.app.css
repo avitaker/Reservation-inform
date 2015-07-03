@@ -6253,10 +6253,12 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
   left: -9999px; }
   .item-radio input:checked ~ .item-content {
     /* style the item content when its checked */
-    background: #f7f7f7; }
+    background: #03C03C;
+    font-weight: bold;
+    color:white;}
   .item-radio input:checked ~ .radio-icon {
     /* show the checkmark icon when its checked */
-    visibility: visible; }
+    visibility: invisible; }
 
 .platform-android.grade-b .item-radio, .platform-android.grade-c .item-radio {
   -webkit-animation: androidCheckedbugfix infinite 1s; }

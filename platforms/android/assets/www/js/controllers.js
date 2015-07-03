@@ -1,8 +1,6 @@
 angular.module('app.controllers', [])
 
-.controller('selectModeCtrl', function($scope,$state,$cordovaStatusbar){
-  $cordovaStatusbar.overlaysWebView(true);
-  $cordovaStatusbar.style(1);
+.controller('selectModeCtrl', function($scope,$state){
   function pageListObj(title,titleUrl){
     this.title=title;
     this.titleUrl=titleUrl;
@@ -21,9 +19,10 @@ angular.module('app.controllers', [])
   }
 })
 
-.controller('newEntryCtrl',function($scope,newResFact,$cordovaSms,$ionicPlatform){
+.controller('newEntryCtrl',function($scope,newResFact,$cordovaSms,$ionicPlatform,$cordovaSpinnerDialog,$cordovaToast){
   $scope.person={};
   $scope.buttonOnclick=function(){
+    $cordovaSpinnerDialog.show("Sending Message","", true);
     first=$scope.person.first;
     last=$scope.person.last;
     tele=$scope.person.tele;
@@ -34,30 +33,23 @@ angular.module('app.controllers', [])
       $cordovaSms
         .send(tele, smsContent)
         .then(function() {
-          alert("Reservation is in the system, and customer should recieve an SMS notification soon.")
+          $scope.person={};
+          //alert("Reservation is in the system, and customer should recieve an SMS notification soon.");
+          $cordovaSpinnerDialog.hide();
+          $cordovaToast.showLongBottom('Here is a message').then(function(success) {
+          }, function (error) {
+            // error
+          });
         }, function(error) {
           alert ("An error occured while sending the message. Please try again.");
         });
       }
-    )
-    $scope.person={};
+    );
   }
 })
 
 .controller('updateReservationCtrl',function($scope,newResFact,resArchive,$cordovaSms,$ionicPlatform){
   $scope.currentList={};
-  // $scope.sendTxt = function (first,last,tele) {
-  //
-  //   $cordovaSms
-  //     .send(tele, 'This is a test message from Avi', options)
-  //     .then(function() {
-  //       alert("SMS was sent");
-  //     }, function(error) {
-  //       alert("Error! SMS was not sent")
-  //     });
-  //
-  // }
-
   $scope.currentList.list=newResFact.personList;
   $scope.delete=function($index){
     if ($scope.currentList.list[$index].ready){

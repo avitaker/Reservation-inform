@@ -1,4 +1,28 @@
 angular.module('starter.services', [])
+.factory('newResFact',function(){
+  var factory={};
+  function newPerson(firstName,lastName,telephone){
+    this.firstName=firstName;
+    this.lastName=lastName;
+    this.telephone=telephone;
+  }
+  factory.personList=[];
+  factory.makeNewPerson=function(fir,las,tel){
+    var newOne=new newPerson(fir,las,tel);
+    return newOne;
+  }
+  factory.addToList=function(something){
+    factory.personList.push(something);
+  }
+  factory.test=4;
+  return factory;
+})
+
+.factory('resArchive',function(){
+  var factory={};
+  factory.personList=[];
+  return factory;
+})
 
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
