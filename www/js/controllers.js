@@ -19,14 +19,18 @@ angular.module('app.controllers', [])
   }
 })
 
-.controller('newEntryCtrl',function($scope,newResFact,$cordovaSms,$ionicPlatform,$cordovaSpinnerDialog,$cordovaToast){
+.controller('newEntryCtrl',function($scope,newResFact,$cordovaSms,$ionicPlatform,$cordovaToast,$ionicPopup){
   $scope.person={};
   $scope.buttonOnclick=function(){
-    $cordovaSpinnerDialog.show("Sending Message","Please wait", true);
+    var myPopup=$ionicPopup.show({
+      template:'<div display=inline-block><ion-spinner icon="spiral" class="spinner-balanced"></ion-spinner><p align=center> Please Wait </p></div>',
+      title:'Sending Message'
+    });
     first=$scope.person.first;
     last=$scope.person.last;
     tele=$scope.person.tele;
-    $scope.currentObj=newResFact.makeNewPerson(first,last,tele);
+    email=$scope.person.email;
+    $scope.currentObj=newResFact.makeNewPerson(first,last,tele,email);
     newResFact.addToList($scope.currentObj);
     var smsContent='Hello, ' + first + ' ' + last + '. We are preparing your reservation, and will send you an SMS when it is ready';
     $ionicPlatform.ready(function () {
@@ -34,8 +38,7 @@ angular.module('app.controllers', [])
         .send(tele, smsContent)
         .then(function() {
           $scope.person={};
-          //alert("Reservation is in the system, and customer should recieve an SMS notification soon.");
-          $cordovaSpinnerDialog.hide();
+          myPopup.close();
           $cordovaToast.showLongBottom('Message sent! Customer is waiting.').then(function(success) {
           }, function (error) {
             // error
@@ -48,12 +51,15 @@ angular.module('app.controllers', [])
   }
 })
 
-.controller('updateReservationCtrl',function($scope,newResFact,resArchive,$cordovaSms,$ionicPlatform,$cordovaSpinnerDialog,$cordovaToast){
+.controller('updateReservationCtrl',function($scope,newResFact,resArchive,$cordovaSms,$ionicPlatform,$cordovaToast,$ionicPopup){
   $scope.currentList={};
   $scope.currentList.list=newResFact.personList;
   $scope.delete=function($index){
     if ($scope.currentList.list[$index].ready){
-      $cordovaSpinnerDialog.show("Sending Message","Please wait", true);
+      var myPopup=$ionicPopup.show({
+        template:'<div display=inline-block><ion-spinner icon="spiral" class="spinner-assertive"></ion-spinner><p align=center> Please Wait </p></div>',
+        title:'Sending Message'
+      });
       var first=$scope.currentList.list[$index].firstName;
       var last=$scope.currentList.list[$index].lastName;
       var tele=$scope.currentList.list[$index].telephone;
@@ -62,7 +68,7 @@ angular.module('app.controllers', [])
         $cordovaSms
           .send(tele, smsContent)
           .then(function() {
-            $cordovaSpinnerDialog.hide();
+            myPopup.close();
             resArchive.personList.push($scope.currentList.list[$index]);
             newResFact.personList.splice($index,1);
             $cordovaToast.showLongBottom('Message sent! Customer will arrive soon.').then(function(success) {
@@ -79,7 +85,8 @@ angular.module('app.controllers', [])
 })
 
 .controller("followUpCtrl",function($scope,resArchive){
-  $scope.archiveList=resArchive.personList;
+  $scope.archiveList={};
+  $scope.archiveList.list=resArchive.personList;
 })
 
 .controller('DashCtrl', function($scope) {})

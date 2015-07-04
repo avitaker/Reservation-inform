@@ -5565,6 +5565,7 @@ a.item-content {
  * --------------------------------------------------
  */
 .spinner {
+  float: left;
   stroke: #444;
   fill: #444; }
   .spinner svg {
@@ -6253,7 +6254,7 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
   left: -9999px; }
   .item-radio input:checked ~ .item-content {
     /* style the item content when its checked */
-    background: #03C03C;
+    background: #77DD77;
     font-weight: bold;
     color:white;}
   .item-radio input:checked ~ .radio-icon {

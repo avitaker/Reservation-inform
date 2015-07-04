@@ -9,3 +9,15 @@
 2015-07-03 17:42:11.386 informReservation[4675:377387] Resetting plugins due to page load.
 2015-07-03 17:42:11.717 informReservation[4675:377387] Finished load of: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Bundle/Application/69BF4E8B-6C2E-47D1-86AD-E5144691CBDE/informReservation.app/www/index.html#/
 2015-07-03 17:42:36.280 informReservation[4675:377778] Terminating since there is no system app.
+2015-07-03 18:48:44.612 informReservation[5979:402181] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Data/Application/6814AB45-C5C9-4FCB-8F6C-88D038769A1F/Library/Cookies/Cookies.binarycookies
+2015-07-03 18:48:45.005 informReservation[5979:402181] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-03 18:48:45.005 informReservation[5979:402181] Multi-tasking -> Device: YES, App: YES
+2015-07-03 18:48:45.037 informReservation[5979:402181] Unlimited access to network resources
+2015-07-03 18:48:45.548 informReservation[5979:402181] [CDVTimer][keyboard] 0.061035ms
+2015-07-03 18:48:45.777 informReservation[5979:402181] [CDVTimer][splashscreen] 228.220046ms
+2015-07-03 18:48:45.781 informReservation[5979:402181] [CDVTimer][statusbar] 4.103005ms
+2015-07-03 18:48:45.781 informReservation[5979:402181] [CDVTimer][TotalPluginStartup] 234.055996ms
+2015-07-03 18:48:45.869 informReservation[5979:402181] Resetting plugins due to page load.
+2015-07-03 18:48:46.194 informReservation[5979:402181] Finished load of: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Bundle/Application/A0BE03ED-D4C5-450E-A10D-2BBF1A1CAC42/informReservation.app/www/index.html#/
+2015-07-03 18:48:59.475 informReservation[5979:402181] Can't find keyplane that supports type 5 for keyboard iPhone-PortraitChoco-PhonePad; using 3760611571_PortraitChoco_iPhone-Complex-Pad_Default
+2015-07-03 18:49:06.363 informReservation[5979:402181] THREAD WARNING: ['Sms'] took '82.165771' ms. Plugin should use a background thread.

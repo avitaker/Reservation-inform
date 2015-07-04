@@ -6253,8 +6253,9 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
   left: -9999px; }
   .item-radio input:checked ~ .item-content {
     /* style the item content when its checked */
-    background: #AEC6CF;
-    font-weight: bold;}
+    background: #03C03C;
+    font-weight: bold;
+    color:white;}
   .item-radio input:checked ~ .radio-icon {
     /* show the checkmark icon when its checked */
     visibility: invisible; }

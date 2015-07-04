@@ -19,9 +19,14 @@ angular.module('app.controllers', [])
   }
 })
 
-.controller('newEntryCtrl',function($scope,newResFact,$cordovaSms,$ionicPlatform){
+.controller('newEntryCtrl',function($scope,newResFact,$cordovaSms,$ionicPlatform,$cordovaSpinnerDialog,$cordovaToast,$ionicPopup){
   $scope.person={};
   $scope.buttonOnclick=function(){
+    var myPopup=$ionicPopup.show({
+      template:'<ion-spinner></ion-spinner>Please Wait',
+      title:'Sending Message'
+    });
+    // $cordovaSpinnerDialog.show("Sending Message","Please wait", true);
     first=$scope.person.first;
     last=$scope.person.last;
     tele=$scope.person.tele;
@@ -32,33 +37,28 @@ angular.module('app.controllers', [])
       $cordovaSms
         .send(tele, smsContent)
         .then(function() {
-          alert("Reservation is in the system, and customer should recieve an SMS notification soon.")
+          $scope.person={};
+          //alert("Reservation is in the system, and customer should recieve an SMS notification soon.");
+          // $cordovaSpinnerDialog.hide();
+          myPopup.close();
+          $cordovaToast.showLongBottom('Message sent! Customer is waiting.').then(function(success) {
+          }, function (error) {
+            // error
+          });
         }, function(error) {
           alert ("An error occured while sending the message. Please try again.");
         });
       }
-    )
-    $scope.person={};
+    );
   }
 })
 
-.controller('updateReservationCtrl',function($scope,newResFact,resArchive,$cordovaSms,$ionicPlatform){
+.controller('updateReservationCtrl',function($scope,newResFact,resArchive,$cordovaSms,$ionicPlatform,$cordovaSpinnerDialog,$cordovaToast){
   $scope.currentList={};
-  // $scope.sendTxt = function (first,last,tele) {
-  //
-  //   $cordovaSms
-  //     .send(tele, 'This is a test message from Avi', options)
-  //     .then(function() {
-  //       alert("SMS was sent");
-  //     }, function(error) {
-  //       alert("Error! SMS was not sent")
-  //     });
-  //
-  // }
-
   $scope.currentList.list=newResFact.personList;
   $scope.delete=function($index){
     if ($scope.currentList.list[$index].ready){
+      $cordovaSpinnerDialog.show("Sending Message","Please wait", true);
       var first=$scope.currentList.list[$index].firstName;
       var last=$scope.currentList.list[$index].lastName;
       var tele=$scope.currentList.list[$index].telephone;
@@ -67,8 +67,13 @@ angular.module('app.controllers', [])
         $cordovaSms
           .send(tele, smsContent)
           .then(function() {
+            $cordovaSpinnerDialog.hide();
             resArchive.personList.push($scope.currentList.list[$index]);
             newResFact.personList.splice($index,1);
+            $cordovaToast.showLongBottom('Message sent! Customer will arrive soon.').then(function(success) {
+            }, function (error) {
+              // error
+            });
           }, function(error) {
             alert ("An error occured while sending the message. Please try again.");
           });

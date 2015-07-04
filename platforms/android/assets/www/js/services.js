@@ -1,20 +1,20 @@
 angular.module('starter.services', [])
 .factory('newResFact',function(){
   var factory={};
-  function newPerson(firstName,lastName,telephone){
+  function newPerson(firstName,lastName,telephone,email){
     this.firstName=firstName;
     this.lastName=lastName;
     this.telephone=telephone;
+    this.email=email;
   }
   factory.personList=[];
-  factory.makeNewPerson=function(fir,las,tel){
-    var newOne=new newPerson(fir,las,tel);
+  factory.makeNewPerson=function(fir,las,tel,email){
+    var newOne=new newPerson(fir,las,tel,email);
     return newOne;
   }
   factory.addToList=function(something){
     factory.personList.push(something);
   }
-  factory.test=4;
   return factory;
 })
 
