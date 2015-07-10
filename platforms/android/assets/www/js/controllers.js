@@ -19,8 +19,43 @@ angular.module('app.controllers', [])
   }
 })
 
-.controller('newEntryCtrl',function($scope,newResFact,$cordovaSms,$ionicPlatform,$cordovaToast,$ionicPopup){
+.controller('newEntryCtrl',function($scope,newResFact,$cordovaSms,$ionicPlatform,$cordovaToast,$ionicPopup,$ionicPopover,$cordovaDatePicker){
   $scope.person={};
+  $scope.timed={};
+  $ionicPopover.fromTemplateUrl('templates/reservationPopover.html', {
+    scope: $scope
+  }).then(function(popover) {
+    $scope.popover = popover;
+  });
+  $scope.openPopover = function($event) {
+    $scope.popover.show($event);
+  };
+  $scope.closePopover = function() {
+    $scope.popover.hide();
+  };
+  //Cleanup the popover when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.popover.remove();
+  });
+
+  var options = {
+    date: new Date(),
+    mode: 'time', // or 'time'
+    minDate: new Date() - 10000,
+    allowOldDates: true,
+    allowFutureDates: false,
+    doneButtonLabel: 'DONE',
+    doneButtonColor: '#F2F3F4',
+    cancelButtonLabel: 'CANCEL',
+    cancelButtonColor: '#000000'
+  };
+
+  $scope.openTimePicker=function(){
+    $cordovaDatePicker.show(options).then(function(date){
+        alert(date);
+    });
+  }
+
   $scope.buttonOnclick=function(){
     var myPopup=$ionicPopup.show({
       template:'<div display=inline-block><ion-spinner icon="spiral" class="spinner-balanced"></ion-spinner><p align=center> Please Wait </p></div>',
@@ -30,14 +65,15 @@ angular.module('app.controllers', [])
     last=$scope.person.last;
     tele=$scope.person.tele;
     email=$scope.person.email;
-    $scope.currentObj=newResFact.makeNewPerson(first,last,tele,email);
+    //timed=$scope.openTimePicker;
+    $scope.currentObj=newResFact.makeNewPerson(first,last,tele,email,timed);
     newResFact.addToList($scope.currentObj);
     var smsContent='Hello, ' + first + ' ' + last + '. We are preparing your reservation, and will send you an SMS when it is ready';
     $ionicPlatform.ready(function () {
       $cordovaSms
         .send(tele, smsContent)
         .then(function() {
-          $scope.person={};
+          // $scope.person={};
           myPopup.close();
           $cordovaToast.showLongBottom('Message sent! Customer is waiting.').then(function(success) {
           }, function (error) {

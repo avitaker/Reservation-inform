@@ -6254,7 +6254,7 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
   left: -9999px; }
   .item-radio input:checked ~ .item-content {
     /* style the item content when its checked */
-    background: #77DD77;
+    background: #03C03C;
     font-weight: bold;
     color:white;}
   .item-radio input:checked ~ .radio-icon {

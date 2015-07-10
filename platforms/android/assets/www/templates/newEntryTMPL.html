@@ -23,6 +23,9 @@
       </label>
       <ion-checkbox ng-model="person.recEmail">Recieve email deals?</ion-checkbox>
     </div>
+    <div class="list list-inset">
+      <div class="item item-text-wrap" ng-click="openPopover($event)">Timed reservation options{{person.timed}}{{timeLeft}}</div>
+    </div>
     <button class="button button-block button-assertive" ng-click='buttonOnclick()'>
       Submit
     </button>

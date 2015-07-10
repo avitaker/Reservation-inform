@@ -21,3 +21,109 @@
 2015-07-03 18:48:46.194 informReservation[5979:402181] Finished load of: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Bundle/Application/A0BE03ED-D4C5-450E-A10D-2BBF1A1CAC42/informReservation.app/www/index.html#/
 2015-07-03 18:48:59.475 informReservation[5979:402181] Can't find keyplane that supports type 5 for keyboard iPhone-PortraitChoco-PhonePad; using 3760611571_PortraitChoco_iPhone-Complex-Pad_Default
 2015-07-03 18:49:06.363 informReservation[5979:402181] THREAD WARNING: ['Sms'] took '82.165771' ms. Plugin should use a background thread.
+2015-07-03 22:47:17.353 informReservation[7192:440537] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Data/Application/F7706B56-9F3D-481F-9737-46F203F28F8A/Library/Cookies/Cookies.binarycookies
+2015-07-03 22:47:17.781 informReservation[7192:440537] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-03 22:47:17.781 informReservation[7192:440537] Multi-tasking -> Device: YES, App: YES
+2015-07-03 22:47:17.814 informReservation[7192:440537] Unlimited access to network resources
+2015-07-03 22:47:18.343 informReservation[7192:440537] [CDVTimer][keyboard] 0.064969ms
+2015-07-03 22:47:18.588 informReservation[7192:440537] [CDVTimer][splashscreen] 244.906008ms
+2015-07-03 22:47:18.592 informReservation[7192:440537] [CDVTimer][statusbar] 4.042029ms
+2015-07-03 22:47:18.592 informReservation[7192:440537] [CDVTimer][TotalPluginStartup] 250.549018ms
+2015-07-03 22:47:18.693 informReservation[7192:440537] Resetting plugins due to page load.
+2015-07-03 22:47:19.083 informReservation[7192:440537] Finished load of: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Bundle/Application/A7A30394-A296-427C-918A-6FC7CE368EA0/informReservation.app/www/index.html#/
+2015-07-03 22:57:34.227 informReservation[7898:445595] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Data/Application/C7E37C73-ACB3-41EE-89FA-89D67FBCB47E/Library/Cookies/Cookies.binarycookies
+2015-07-03 22:57:34.616 informReservation[7898:445595] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-03 22:57:34.617 informReservation[7898:445595] Multi-tasking -> Device: YES, App: YES
+2015-07-03 22:57:34.642 informReservation[7898:445595] Unlimited access to network resources
+2015-07-03 22:57:35.182 informReservation[7898:445595] [CDVTimer][keyboard] 0.068009ms
+2015-07-03 22:57:35.404 informReservation[7898:445595] [CDVTimer][splashscreen] 221.951008ms
+2015-07-03 22:57:35.409 informReservation[7898:445595] [CDVTimer][statusbar] 4.601002ms
+2015-07-03 22:57:35.409 informReservation[7898:445595] [CDVTimer][TotalPluginStartup] 228.745997ms
+2015-07-03 22:57:35.473 informReservation[7898:445595] Resetting plugins due to page load.
+2015-07-03 22:57:35.830 informReservation[7898:445595] Finished load of: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Bundle/Application/75F3B25E-3B25-4DD3-B6B7-819ED43A3F4B/informReservation.app/www/index.html#/
+2015-07-03 22:57:50.311 informReservation[7898:445799] Terminating since there is no system app.
+2015-07-03 23:00:31.192 informReservation[8598:448148] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Data/Application/87D8C262-310F-4904-90B1-219FC4F7AE7E/Library/Cookies/Cookies.binarycookies
+2015-07-03 23:00:31.311 informReservation[8598:448148] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-03 23:00:31.312 informReservation[8598:448148] Multi-tasking -> Device: YES, App: YES
+2015-07-03 23:00:31.314 informReservation[8598:448148] Unlimited access to network resources
+2015-07-03 23:00:31.402 informReservation[8598:448148] [CDVTimer][keyboard] 0.057995ms
+2015-07-03 23:00:31.440 informReservation[8598:448148] [CDVTimer][splashscreen] 38.318992ms
+2015-07-03 23:00:31.444 informReservation[8598:448148] [CDVTimer][statusbar] 4.019976ms
+2015-07-03 23:00:31.445 informReservation[8598:448148] [CDVTimer][TotalPluginStartup] 42.837024ms
+2015-07-03 23:00:31.489 informReservation[8598:448148] Resetting plugins due to page load.
+2015-07-03 23:00:31.688 informReservation[8598:448148] Finished load of: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Bundle/Application/8DAB5F92-C86D-41DA-9915-FE297809F086/informReservation.app/www/index.html#/
+2015-07-03 23:03:49.086 informReservation[9265:450585] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Data/Application/9608F61C-40DE-4AD3-9D4B-928D9B4B8C59/Library/Cookies/Cookies.binarycookies
+2015-07-03 23:03:49.157 informReservation[9265:450585] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-03 23:03:49.158 informReservation[9265:450585] Multi-tasking -> Device: YES, App: YES
+2015-07-03 23:03:49.160 informReservation[9265:450585] Unlimited access to network resources
+2015-07-03 23:03:49.245 informReservation[9265:450585] [CDVTimer][keyboard] 0.096023ms
+2015-07-03 23:03:49.262 informReservation[9265:450585] [CDVTimer][splashscreen] 16.620040ms
+2015-07-03 23:03:49.266 informReservation[9265:450585] [CDVTimer][statusbar] 4.037023ms
+2015-07-03 23:03:49.266 informReservation[9265:450585] [CDVTimer][TotalPluginStartup] 21.283984ms
+2015-07-03 23:03:49.312 informReservation[9265:450585] Resetting plugins due to page load.
+2015-07-03 23:03:49.498 informReservation[9265:450585] Finished load of: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Bundle/Application/FC3D442F-3115-4FDC-8477-D76ABA40B421/informReservation.app/www/index.html#/
+2015-07-03 23:06:02.852 informReservation[9919:452201] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Data/Application/D8182CDF-4E2A-4F01-8005-BF91D11BF260/Library/Cookies/Cookies.binarycookies
+2015-07-03 23:06:02.921 informReservation[9919:452201] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-03 23:06:02.921 informReservation[9919:452201] Multi-tasking -> Device: YES, App: YES
+2015-07-03 23:06:02.923 informReservation[9919:452201] Unlimited access to network resources
+2015-07-03 23:06:03.003 informReservation[9919:452201] [CDVTimer][keyboard] 0.056028ms
+2015-07-03 23:06:03.024 informReservation[9919:452201] [CDVTimer][splashscreen] 20.916045ms
+2015-07-03 23:06:03.028 informReservation[9919:452201] [CDVTimer][statusbar] 4.031956ms
+2015-07-03 23:06:03.028 informReservation[9919:452201] [CDVTimer][TotalPluginStartup] 25.445998ms
+2015-07-03 23:06:03.072 informReservation[9919:452201] Resetting plugins due to page load.
+2015-07-03 23:06:03.245 informReservation[9919:452201] Finished load of: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Bundle/Application/628D62CB-B25E-4DD7-B93C-0BAF8BB7FD35/informReservation.app/www/index.html#/
+2015-07-03 23:28:41.690 informReservation[10962:464645] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Data/Application/DE6AE60C-79C1-4573-B8A1-795F283CEFFD/Library/Cookies/Cookies.binarycookies
+2015-07-03 23:28:42.080 informReservation[10962:464645] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-03 23:28:42.081 informReservation[10962:464645] Multi-tasking -> Device: YES, App: YES
+2015-07-03 23:28:42.112 informReservation[10962:464645] Unlimited access to network resources
+2015-07-03 23:28:42.635 informReservation[10962:464645] [CDVTimer][keyboard] 0.064969ms
+2015-07-03 23:28:42.860 informReservation[10962:464645] [CDVTimer][splashscreen] 224.278033ms
+2015-07-03 23:28:42.864 informReservation[10962:464645] [CDVTimer][statusbar] 4.267037ms
+2015-07-03 23:28:42.864 informReservation[10962:464645] [CDVTimer][TotalPluginStartup] 230.140984ms
+2015-07-03 23:28:42.948 informReservation[10962:464645] Resetting plugins due to page load.
+2015-07-03 23:28:43.316 informReservation[10962:464645] Finished load of: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Bundle/Application/71E60195-86F0-4255-B993-152F3F92368D/informReservation.app/www/index.html#/
+2015-07-03 23:57:28.225 informReservation[10962:471410] Communications error: <OS_xpc_error: <error: 0x31445f4> { count = 1, contents =
+	"XPCErrorDescription" => <string: 0x314483c> { length = 22, contents = "Connection interrupted" }
+}>
+2015-07-04 10:34:04.365 informReservation[11914:505368] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Data/Application/945A4CFF-7394-4EB5-A8F3-C91738D7715E/Library/Cookies/Cookies.binarycookies
+2015-07-04 10:34:04.804 informReservation[11914:505368] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-04 10:34:04.805 informReservation[11914:505368] Multi-tasking -> Device: YES, App: YES
+2015-07-04 10:34:04.827 informReservation[11914:505368] Unlimited access to network resources
+2015-07-04 10:34:05.267 informReservation[11914:505368] [CDVTimer][keyboard] 0.064969ms
+2015-07-04 10:34:05.472 informReservation[11914:505368] [CDVTimer][splashscreen] 204.540968ms
+2015-07-04 10:34:05.481 informReservation[11914:505368] [CDVTimer][statusbar] 8.338034ms
+2015-07-04 10:34:05.481 informReservation[11914:505368] [CDVTimer][TotalPluginStartup] 213.976026ms
+2015-07-04 10:34:05.572 informReservation[11914:505368] Resetting plugins due to page load.
+2015-07-04 10:34:05.926 informReservation[11914:505368] Finished load of: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Bundle/Application/C5F9197D-B730-4B18-84CA-85AD8991F173/informReservation.app/www/index.html
+2015-07-04 10:35:00.822 informReservation[12607:507198] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Data/Application/1D686D69-914F-4D70-9ABF-B410431EBF86/Library/Cookies/Cookies.binarycookies
+2015-07-04 10:35:00.931 informReservation[12607:507198] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-04 10:35:00.932 informReservation[12607:507198] Multi-tasking -> Device: YES, App: YES
+2015-07-04 10:35:00.935 informReservation[12607:507198] Unlimited access to network resources
+2015-07-04 10:35:01.024 informReservation[12607:507198] [CDVTimer][keyboard] 0.066996ms
+2015-07-04 10:35:01.037 informReservation[12607:507198] [CDVTimer][splashscreen] 13.062954ms
+2015-07-04 10:35:01.041 informReservation[12607:507198] [CDVTimer][statusbar] 3.917992ms
+2015-07-04 10:35:01.042 informReservation[12607:507198] [CDVTimer][TotalPluginStartup] 17.597973ms
+2015-07-04 10:35:01.088 informReservation[12607:507198] Resetting plugins due to page load.
+2015-07-04 10:35:01.259 informReservation[12607:507198] Finished load of: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Bundle/Application/EF84B86E-07E6-436F-8DE3-3F6A40C25643/informReservation.app/www/index.html#/
+2015-07-04 10:35:26.930 informReservation[12607:507198] THREAD WARNING: ['Sms'] took '40.597900' ms. Plugin should use a background thread.
+2015-07-04 10:35:35.328 informReservation[12607:507647] Terminating since there is no system app.
+2015-07-04 12:01:25.975 informReservation[13639:535899] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Data/Application/CF414B08-2DE9-40EC-A2C3-B718E5A847BD/Library/Cookies/Cookies.binarycookies
+2015-07-04 12:01:26.388 informReservation[13639:535899] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-04 12:01:26.389 informReservation[13639:535899] Multi-tasking -> Device: YES, App: YES
+2015-07-04 12:01:26.422 informReservation[13639:535899] Unlimited access to network resources
+2015-07-04 12:01:26.964 informReservation[13639:535899] [CDVTimer][keyboard] 0.058949ms
+2015-07-04 12:01:27.214 informReservation[13639:535899] [CDVTimer][splashscreen] 249.709964ms
+2015-07-04 12:01:27.218 informReservation[13639:535899] [CDVTimer][statusbar] 4.326999ms
+2015-07-04 12:01:27.219 informReservation[13639:535899] [CDVTimer][TotalPluginStartup] 255.897999ms
+2015-07-04 12:01:27.322 informReservation[13639:535899] Resetting plugins due to page load.
+2015-07-04 12:01:27.711 informReservation[13639:535899] Finished load of: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Bundle/Application/45F3CA96-47C4-40BD-91F4-723809339578/informReservation.app/www/index.html#/
+2015-07-04 13:31:16.722 informReservation[14818:565516] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Data/Application/E7DD7B52-3AF5-49A8-B83A-D1D4F20C82E9/Library/Cookies/Cookies.binarycookies
+2015-07-04 13:31:17.152 informReservation[14818:565516] Apache Cordova native platform version 3.8.0 is starting.
+2015-07-04 13:31:17.153 informReservation[14818:565516] Multi-tasking -> Device: YES, App: YES
+2015-07-04 13:31:17.187 informReservation[14818:565516] Unlimited access to network resources
+2015-07-04 13:31:17.767 informReservation[14818:565516] [CDVTimer][keyboard] 0.065029ms
+2015-07-04 13:31:18.031 informReservation[14818:565516] [CDVTimer][splashscreen] 263.387024ms
+2015-07-04 13:31:18.036 informReservation[14818:565516] [CDVTimer][statusbar] 5.340040ms
+2015-07-04 13:31:18.036 informReservation[14818:565516] [CDVTimer][TotalPluginStartup] 270.507991ms
+2015-07-04 13:31:18.150 informReservation[14818:565516] Resetting plugins due to page load.
+2015-07-04 13:31:18.545 informReservation[14818:565516] Finished load of: file:///Users/avinashdavid/Library/Developer/CoreSimulator/Devices/EE8646E6-938C-4089-BF29-D42D11B57BC1/data/Containers/Bundle/Application/127F4E62-A157-41FD-8C7A-10604ECAD0AD/informReservation.app/www/index.html#/

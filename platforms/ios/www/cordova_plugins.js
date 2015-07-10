@@ -66,6 +66,13 @@ module.exports = [
     {
         "file": "plugins/nl.x-services.plugins.toast/test/tests.js",
         "id": "nl.x-services.plugins.toast.tests"
+    },
+    {
+        "file": "plugins/cordova-plugin-datepicker/www/ios/DatePicker.js",
+        "id": "cordova-plugin-datepicker.DatePicker",
+        "clobbers": [
+            "datePicker"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -79,7 +86,8 @@ module.exports.metadata =
     "com.cordova.plugins.sms": "0.1.4",
     "cordova-plugin-statusbar": "1.0.1",
     "hu.dpal.phonegap.plugins.SpinnerDialog": "1.3.1",
-    "nl.x-services.plugins.toast": "2.1.1"
+    "nl.x-services.plugins.toast": "2.1.1",
+    "cordova-plugin-datepicker": "0.8.2"
 }
 // BOTTOM OF METADATA
 });

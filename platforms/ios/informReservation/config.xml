@@ -42,6 +42,9 @@
     <feature name="Toast">
         <param name="ios-package" value="Toast" />
     </feature>
+    <feature name="DatePicker">
+        <param name="ios-package" value="DatePicker" />
+    </feature>
     <name>informReservation</name>
     <description>
         An Ionic Framework and Cordova project.

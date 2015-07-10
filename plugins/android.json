@@ -39,6 +39,10 @@
                         {
                             "xml": "<feature name=\"Toast\"><param name=\"android-package\" value=\"nl.xservices.plugins.Toast\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"DatePickerPlugin\"><param name=\"android-package\" value=\"com.plugin.datepicker.DatePickerPlugin\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -89,6 +93,9 @@
             "PACKAGE_NAME": "com.ionicframework.informreservation571489"
         },
         "nl.x-services.plugins.toast": {
+            "PACKAGE_NAME": "com.ionicframework.informreservation571489"
+        },
+        "cordova-plugin-datepicker": {
             "PACKAGE_NAME": "com.ionicframework.informreservation571489"
         }
     },

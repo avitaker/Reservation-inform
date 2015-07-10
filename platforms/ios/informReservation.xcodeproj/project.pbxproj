@@ -52,6 +52,8 @@
 		0620B8BEC7B04C04A03E3404 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = B55E9582095A40989AAFF201 /* Toast+UIView.m */; };
 		3DDC49E210F6417FA74947D6 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = B55351C3573947FCBCC9DE8C /* Toast.m */; };
 		19EFAD970B274D46BDAD5233 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 420D38DA8D45407EB8D91D30 /* QuartzCore.framework */; };
+		6F499C270A624A94816C3E0D /* DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A23A3D60E4E84F2A9A49422A /* DatePicker.m */; };
+		E430C0FD2D6045FEB7292F4F /* DatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5FC3705C26348E99092E7B0 /* DatePicker.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +143,9 @@
 		324B153F7B6940DD91B32EE1 /* Toast+UIView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Toast+UIView.h"; path = "nl.x-services.plugins.toast/Toast+UIView.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		4A2147FD5D704A3598695EC2 /* Toast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Toast.h"; path = "nl.x-services.plugins.toast/Toast.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		420D38DA8D45407EB8D91D30 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "QuartzCore.framework"; path = "System/Library/Frameworks/QuartzCore.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		A23A3D60E4E84F2A9A49422A /* DatePicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "DatePicker.m"; path = "cordova-plugin-datepicker/DatePicker.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		4E96175141FC4FD98D7FADDD /* DatePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DatePicker.h"; path = "cordova-plugin-datepicker/DatePicker.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		E5FC3705C26348E99092E7B0 /* DatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "DatePicker.xib"; path = "DatePicker.xib"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +220,7 @@
 				308D052D1370CCF300D202BF /* icons */,
 				308D05311370CCF300D202BF /* splash */,
 				8D1107310486CEB800E47090 /* informReservation-Info.plist */,
+				E5FC3705C26348E99092E7B0 /* DatePicker.xib */,
 			);
 			name = Resources;
 			path = "informReservation/Resources";
@@ -265,6 +271,8 @@
 				B55351C3573947FCBCC9DE8C /* Toast.m */,
 				324B153F7B6940DD91B32EE1 /* Toast+UIView.h */,
 				4A2147FD5D704A3598695EC2 /* Toast.h */,
+				A23A3D60E4E84F2A9A49422A /* DatePicker.m */,
+				4E96175141FC4FD98D7FADDD /* DatePicker.h */,
 			);
 			name = Plugins;
 			path = "informReservation/Plugins";
@@ -418,6 +426,7 @@
 				7E7966E11810823500FA85AD /* icon-50@2x.png in Resources */,
 				7E7966E51810823500FA85AD /* icon-76@2x.png in Resources */,
 				30FC414916E50CA1004E6F35 /* icon-72@2x.png in Resources */,
+				E430C0FD2D6045FEB7292F4F /* DatePicker.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +469,7 @@
 				CEFC3E1F68AB4B79875FC83C /* CDVSpinnerDialog.m in Sources */,
 				0620B8BEC7B04C04A03E3404 /* Toast+UIView.m in Sources */,
 				3DDC49E210F6417FA74947D6 /* Toast.m in Sources */,
+				6F499C270A624A94816C3E0D /* DatePicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

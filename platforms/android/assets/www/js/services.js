@@ -1,19 +1,43 @@
 angular.module('starter.services', [])
-.factory('newResFact',function(){
+.factory('newResFact',function($timeout,$cordovaSms,$cordovaToast){
   var factory={};
-  function newPerson(firstName,lastName,telephone,email){
+  function newPerson(firstName,lastName,telephone,email,timed){
     this.firstName=firstName;
     this.lastName=lastName;
     this.telephone=telephone;
     this.email=email;
+    this.timed=timed;
   }
   factory.personList=[];
-  factory.makeNewPerson=function(fir,las,tel,email){
-    var newOne=new newPerson(fir,las,tel,email);
+  factory.makeNewPerson=function(fir,las,tel,email,timed){
+    var newOne=new newPerson(fir,las,tel,email,timed);
     return newOne;
   }
   factory.addToList=function(something){
     factory.personList.push(something);
+    // if (something.timed){
+    //   var first=something.firstName;
+    //   var last=something.lastName;
+    //   var tele=something.telephone;
+    //   var smsContent='Hello, ' + first + ' ' + last + '. Your reservation is ready.';
+    //   var nowDate=new Date();
+    //   var timeLeft=something.timed.getTime()-nowDate.getTime();
+    //   factory.timeLeft=timeLeft;
+    //   function timeOutFunction(){
+    //     $cordovaSms
+    //       .send(tele, smsContent)
+    //       .then(function() {
+    //         $cordovaToast.showLongBottom('Message sent! Customer is waiting.').then(function(success) {
+    //         }, function (error) {
+    //           // error
+    //         });
+    //       }, function(error) {
+    //         alert ("An error occured while sending the message. Please try again.");
+    //       });
+    //     $timeout(timeOutFunction,timeLeft);
+    //   }
+    //   // timeOutFunction();
+    // }
   }
   return factory;
 })
@@ -23,6 +47,23 @@ angular.module('starter.services', [])
   factory.personList=[];
   return factory;
 })
+
+.factory('$localstorage', ['$window', function($window) {
+  return {
+    set: function(key, value) {
+      $window.localStorage[key] = value;
+    },
+    get: function(key, defaultValue) {
+      return $window.localStorage[key] || defaultValue;
+    },
+    setObject: function(key, value) {
+      $window.localStorage[key] = JSON.stringify(value);
+    },
+    getObject: function(key) {
+      return JSON.parse($window.localStorage[key] || '{}');
+    }
+  }
+}])
 
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array

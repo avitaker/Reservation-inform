@@ -5565,7 +5565,6 @@ a.item-content {
  * --------------------------------------------------
  */
 .spinner {
-  float: left;
   stroke: #444;
   fill: #444; }
   .spinner svg {
@@ -6254,12 +6253,10 @@ input[type="radio"][disabled], input[type="checkbox"][disabled], input[type="rad
   left: -9999px; }
   .item-radio input:checked ~ .item-content {
     /* style the item content when its checked */
-    background: #77DD77;
-    font-weight: bold;
-    color:white;}
+    background: #f7f7f7; }
   .item-radio input:checked ~ .radio-icon {
     /* show the checkmark icon when its checked */
-    visibility: invisible; }
+    visibility: visible; }
 
 .platform-android.grade-b .item-radio, .platform-android.grade-c .item-radio {
   -webkit-animation: androidCheckedbugfix infinite 1s; }
