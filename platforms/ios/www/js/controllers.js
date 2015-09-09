@@ -50,19 +50,11 @@ angular.module('app.controllers', [])
     cancelButtonColor: '#000000'
   };
 
-  // $scope.openTimePicker=function(){
-  //   $cordovaDatePicker.show(options).then(function(date){
-  //       alert(date);
-  //   });
-  // }
-
-  $ionicPlatform.ready( function () {
-
+  $scope.openTimePicker=function(){
     $cordovaDatePicker.show(options).then(function(date){
         alert(date);
     });
-
-  }, false);
+  }
 
   $scope.buttonOnclick=function(){
     var myPopup=$ionicPopup.show({
@@ -73,7 +65,7 @@ angular.module('app.controllers', [])
     last=$scope.person.last;
     tele=$scope.person.tele;
     email=$scope.person.email;
-    timed=$scope.person.timed;
+    //timed=$scope.openTimePicker;
     $scope.currentObj=newResFact.makeNewPerson(first,last,tele,email,timed);
     newResFact.addToList($scope.currentObj);
     var smsContent='Hello, ' + first + ' ' + last + '. We are preparing your reservation, and will send you an SMS when it is ready';

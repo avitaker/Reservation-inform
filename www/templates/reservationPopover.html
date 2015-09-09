@@ -1,10 +1,15 @@
 <ion-popover-view>
   <ion-content>
     <div class="list">
-      <div class="item item-divider">Make reservation at </div>
-      <div class="item item-text-wrap" ng-click="openTimePicker()" ng-model="person.timed">
+      <!-- <div class="item item-divider">Timed reservation</div> -->
+      <label class="item item-input">
+        <span class="input-label">Click Here</span>
+        <input type="time" ng-model="person.timed">
+      </label>
+      <div class='item item-calm' ng-show="person.timed">Make reservation for {{person.timed | date:shortTime}}</div>
+      <!-- <div class="item item-text-wrap" ng-click="openTimePicker()" ng-model="person.timed">
         Click Here {{person.timed}}
-      </div>
+      </div> -->
     </div>
   </ion-content>
 </ion-popover-view>

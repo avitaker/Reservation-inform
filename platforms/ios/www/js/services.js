@@ -15,29 +15,29 @@ angular.module('starter.services', [])
   }
   factory.addToList=function(something){
     factory.personList.push(something);
-    // if (something.timed){
-    //   var first=something.firstName;
-    //   var last=something.lastName;
-    //   var tele=something.telephone;
-    //   var smsContent='Hello, ' + first + ' ' + last + '. Your reservation is ready.';
-    //   var nowDate=new Date();
-    //   var timeLeft=something.timed.getTime()-nowDate.getTime();
-    //   factory.timeLeft=timeLeft;
-    //   function timeOutFunction(){
-    //     $cordovaSms
-    //       .send(tele, smsContent)
-    //       .then(function() {
-    //         $cordovaToast.showLongBottom('Message sent! Customer is waiting.').then(function(success) {
-    //         }, function (error) {
-    //           // error
-    //         });
-    //       }, function(error) {
-    //         alert ("An error occured while sending the message. Please try again.");
-    //       });
-    //     $timeout(timeOutFunction,timeLeft);
-    //   }
-    //   // timeOutFunction();
-    // }
+    if (something.timed){
+      var first=something.firstName;
+      var last=something.lastName;
+      var tele=something.telephone;
+      var smsContent='Hello, ' + first + ' ' + last + '. Your reservation is ready.';
+      var nowDate=new Date();
+      var timeLeft=something.timed.getTime()-nowDate.getTime();
+      factory.timeLeft=timeLeft;
+      function timeOutFunction(){
+        $cordovaSms
+          .send(tele, smsContent)
+          .then(function() {
+            $cordovaToast.showLongBottom('Message sent! Customer is waiting.').then(function(success) {
+            }, function (error) {
+              // error
+            });
+          }, function(error) {
+            alert ("An error occured while sending the message. Please try again.");
+            $timeout(timeOutFunction,timeLeft);
+          });
+      }
+      // timeOutFunction();
+    }
   }
   return factory;
 })

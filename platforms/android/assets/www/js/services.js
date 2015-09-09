@@ -1,43 +1,96 @@
 angular.module('starter.services', [])
-.factory('newResFact',function($timeout,$cordovaSms,$cordovaToast){
+.factory('newResFact',function($timeout,$cordovaSms,$cordovaToast,$ionicPopup){
   var factory={};
-  function newPerson(firstName,lastName,telephone,email,timed){
+  function newPerson(firstName,lastName,numSeats,telephone,email,timed){
     this.firstName=firstName;
     this.lastName=lastName;
+    this.numSeats=numSeats;
     this.telephone=telephone;
     this.email=email;
     this.timed=timed;
   }
   factory.personList=[];
-  factory.makeNewPerson=function(fir,las,tel,email,timed){
+  factory.makeNewPerson=function(fir,las,numSeats,tel,email,timed){
     var newOne=new newPerson(fir,las,tel,email,timed);
     return newOne;
   }
+  factory.getTheDateRight=function(aDate){
+    var nowDate=new Date();
+    var realDate=nowDate.getDate();
+    var realMonth=nowDate.getMonth();
+    var realYear=nowDate.getFullYear();
+    aDate.setDate(realDate);
+    aDate.setMonth(realMonth);
+    aDate.setFullYear(realYear);
+  }
+
+  factory.doAlert=function(somthing){
+    console.log('doAlert try');
+    somthing.alPop=$ionicPopup.alert({
+       title: 'Reservation time!',
+       template: somthing.firstName + ' ' + somthing.lastName + ' has a reservation at this time'
+     });
+     alertPopup.then(function(res) {
+       somthing.alPop.close();
+       $timeout.cancel(somthing.timeOut);
+       somthing.timeOut=undefined;
+       somthing.timeLeft=0;
+       console.log('Please work');
+     });
+    // var toast="The following reservation is overdue: " + somthing.firstName + " " + somthing.lastName;
+    // $cordovaToast.showLongBottom(toast).then(function(success) {
+    //   console.log('doAlert succeed');
+    //   $timeout.cancel(somthing.timeOut);
+    //   somthing.timeOut=undefined;
+    //   somthing.timeLeft=0;
+    // }, function (error) {
+    //   factory.doAlert(somthing)
+    // });
+  }
+
+  factory.runTimeOut=function(samething){
+    // if ($scope.isQuizActive===true){
+    console.log('runTimeOut');
+      samething.timeOut=$timeout(
+        function(){
+          factory.doAlert(samething)
+        },
+        samething.timeLeft
+      );
+    // }
+    // else {$timeout.cancel($scope.timeLimit);}
+  }
+
   factory.addToList=function(something){
     factory.personList.push(something);
-    // if (something.timed){
-    //   var first=something.firstName;
-    //   var last=something.lastName;
-    //   var tele=something.telephone;
-    //   var smsContent='Hello, ' + first + ' ' + last + '. Your reservation is ready.';
-    //   var nowDate=new Date();
-    //   var timeLeft=something.timed.getTime()-nowDate.getTime();
-    //   factory.timeLeft=timeLeft;
-    //   function timeOutFunction(){
-    //     $cordovaSms
-    //       .send(tele, smsContent)
-    //       .then(function() {
-    //         $cordovaToast.showLongBottom('Message sent! Customer is waiting.').then(function(success) {
-    //         }, function (error) {
-    //           // error
-    //         });
-    //       }, function(error) {
-    //         alert ("An error occured while sending the message. Please try again.");
-    //       });
-    //     $timeout(timeOutFunction,timeLeft);
-    //   }
-    //   // timeOutFunction();
-    // }
+    if (something.timed){
+      console.log(something.timed);
+      var first=something.firstName;
+      var last=something.lastName;
+      var tele=something.telephone;
+      var nowDate=new Date();
+      factory.getTheDateRight(something.timed);
+      console.log(something.timed);
+      var smsContent='Hello, ' + first + ' ' + last + '. Your reservation is ready.';
+      something.timeLeft=something.timed.getTime()-nowDate.getTime();
+      console.log(something.timeLeft);
+      // factory.timeLeft=timeLeft;
+      factory.runTimeOut(something);
+      // function timeOutFunction(){
+      //   $cordovaSms
+      //     .send(tele, smsContent)
+      //     .then(function() {
+      //       $cordovaToast.showLongBottom('Message sent! Customer is waiting.').then(function(success) {
+      //       }, function (error) {
+      //         // error
+      //       });
+      //     }, function(error) {
+      //       alert ("An error occured while sending the message. Please try again.");
+      //       $timeout(timeOutFunction,timeLeft);
+      //     });
+      // }
+      // timeOutFunction();
+    }
   }
   return factory;
 })

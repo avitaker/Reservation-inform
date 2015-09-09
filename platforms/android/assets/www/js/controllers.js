@@ -19,7 +19,7 @@ angular.module('app.controllers', [])
   }
 })
 
-.controller('newEntryCtrl',function($scope,newResFact,$cordovaSms,$ionicPlatform,$cordovaToast,$ionicPopup,$ionicPopover,$cordovaDatePicker){
+.controller('newEntryCtrl',function($scope,newResFact,$cordovaSms,$ionicPlatform,$cordovaToast,$ionicPopup,$ionicPopover,$cordovaDatePicker,$ionicHistory,$filter){
   $scope.person={};
   $scope.timed={};
   $ionicPopover.fromTemplateUrl('templates/reservationPopover.html', {
@@ -57,33 +57,57 @@ angular.module('app.controllers', [])
   }
 
   $scope.buttonOnclick=function(){
-    var myPopup=$ionicPopup.show({
-      template:'<div display=inline-block><ion-spinner icon="spiral" class="spinner-balanced"></ion-spinner><p align=center> Please Wait </p></div>',
-      title:'Sending Message'
-    });
-    first=$scope.person.first;
-    last=$scope.person.last;
-    tele=$scope.person.tele;
-    email=$scope.person.email;
-    //timed=$scope.openTimePicker;
-    $scope.currentObj=newResFact.makeNewPerson(first,last,tele,email,timed);
-    newResFact.addToList($scope.currentObj);
-    var smsContent='Hello, ' + first + ' ' + last + '. We are preparing your reservation, and will send you an SMS when it is ready';
-    $ionicPlatform.ready(function () {
-      $cordovaSms
-        .send(tele, smsContent)
-        .then(function() {
-          // $scope.person={};
-          myPopup.close();
-          $cordovaToast.showLongBottom('Message sent! Customer is waiting.').then(function(success) {
-          }, function (error) {
-            // error
-          });
-        }, function(error) {
-          alert ("An error occured while sending the message. Please try again.");
-        });
+    if (!$scope.person.tele){
+      var thisPopup=$ionicPopup.alert({
+        template:'<div class="item item-text-wrap">Please enter a telephone number</div>',
+        title:'No telephone number',
+      });
+      alertPopup.then(function(res) {
+        thisPopup.close();
+
+        // $timeout.cancel(somthing.timeOut);
+        // somthing.timeOut=undefined;
+        // somthing.timeLeft=0;
+        // console.log('Please work');
+      })
+    }
+    else {
+      var myPopup=$ionicPopup.show({
+        template:'<div display=inline-block><ion-spinner icon="spiral" class="spinner-balanced"></ion-spinner><p align=center> Please Wait </p></div>',
+        title:'Sending Message'
+      });
+      first=$scope.person.first;
+      last=$scope.person.last;
+      numSeats=$scope.person.numSeats || 1;
+      tele=$scope.person.tele;
+      email=$scope.person.email;
+      timed=$scope.person.timed;
+      $scope.currentObj=newResFact.makeNewPerson(first,last,numSeats,tele,email,timed);
+      newResFact.addToList($scope.currentObj);
+      var smsContent;
+      if ($scope.person.timed){
+        smsContent='Hello, ' + first + ' ' + last + '. We are preparing your reservation for ' + numSeats + ' seats at ' + $filter("date")(timed, "shortTime") + ', and will send you an SMS when it is ready';
       }
-    );
+      else {
+        smsContent='Hello, ' + first + ' ' + last + '. We are preparing a table for ' + numSeats + ', and will send you an SMS when it is ready';
+      }
+        $ionicPlatform.ready(function () {
+          $cordovaSms
+            .send(tele, smsContent)
+            .then(function() {
+              // $scope.person={};
+              myPopup.close();
+              $cordovaToast.showLongBottom('Message sent! Customer is waiting.').then(function(success) {
+                $ionicHistory.goBack();
+              }, function (error) {
+                // error
+              });
+            }, function(error) {
+              alert ("An error occured while sending the message. Please try again.");
+            });
+          }
+        );
+    }
   }
 })
 
@@ -92,6 +116,7 @@ angular.module('app.controllers', [])
   $scope.currentList.list=newResFact.personList;
   $scope.delete=function($index){
     if ($scope.currentList.list[$index].ready){
+      console.log($scope.currentList.list[$index].telephone);
       var myPopup=$ionicPopup.show({
         template:'<div display=inline-block><ion-spinner icon="spiral" class="spinner-assertive"></ion-spinner><p align=center> Please Wait </p></div>',
         title:'Sending Message'

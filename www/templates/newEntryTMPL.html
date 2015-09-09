@@ -3,11 +3,17 @@
     <div id="name_input" class="list list-inset">
       <label class="item item-input">
         <span class="input-label">First Name</span>
-        <input type="text" placeholder="First Name" ng-model="person.first">
+        <input type="text" ng-model="person.first">
       </label>
       <label class="item item-input">
         <span class="input-label">Last Name</span>
-        <input type="text" placeholder="Last Name" ng-model="person.last">
+        <input type="text" ng-model="person.last">
+      </label>
+    </div>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <span class="input-label">Number of seats</span>
+        <input type="number" ng-model="person.numSeats">
       </label>
     </div>
     <div id="telephone_input" class="list list-inset">
@@ -24,8 +30,18 @@
       <ion-checkbox ng-model="person.recEmail">Recieve email deals?</ion-checkbox>
     </div>
     <div class="list list-inset">
-      <div class="item item-text-wrap" ng-click="openPopover($event)">Timed reservation options{{person.timed}}{{timeLeft}}</div>
+      <label class="item item-input">
+        <span class="input-label">Date</span>
+        <input type="date" ng-model="person.date">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Time</span>
+        <input type="time" ng-model="person.timed">
+      </label>
     </div>
+    <!-- <div class="list list-inset">
+      <div class="item item-text-wrap" ng-click="openPopover($event)">Timed reservation options</div>
+    </div> -->
     <button class="button button-block button-assertive" ng-click='buttonOnclick()'>
       Submit
     </button>
