@@ -1,0 +1,35 @@
+<ion-view view-title="New Reservation">
+  <ion-content>
+    <div id="name_input" class="list list-inset">
+      <label class="item item-input">
+        <span class="input-label">First Name</span>
+        <input type="text" ng-model="person.firstName" ng-value="person.firstName" placeholder="person.firstName">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Last Name</span>
+        <input type="text" ng-model="person.lastName" ng-value="person.lastName" placeholder="person.lastName">
+      </label>
+    </div>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <span class="input-label">Number of seats</span>
+        <input type="number" ng-model="person.numSeats">
+      </label>
+    </div>
+    <div id="telephone_input" class="list list-inset">
+      <label class="item item-input">
+        <span class="input-label">Telephone</span>
+        <input type="tel" ng-model='person.telephone' ng-value="person.telephone" placeholder="person.telephone">
+      </label>
+    </div>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <span class="input-label">Time</span>
+        <input type="time" ng-model="person.timed">
+      </label>
+    </div>
+    <button class="button button-block button-balanced" ng-click='buttonOnclick()'>
+      Submit
+    </button>
+  </ion-content>
+</ion-view>

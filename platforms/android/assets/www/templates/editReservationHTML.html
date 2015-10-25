@@ -1,0 +1,49 @@
+<ion-modal-view>
+  <ion-content>
+    <div class="list">
+      <!-- <div class="item item-divider">Timed reservation</div> -->
+      <div id="name_input" class="list list-inset">
+        <label class="item item-input">
+          <span class="input-label">First Name</span>
+          <input type="text" ng-model="currentPerson.firstName" ng-value="currentPerson.firstName" placeholder="{{currentPerson.firstName}}">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Last Name</span>
+          <input type="text" ng-model="currentPerson.lastName" ng-value="currentPerson.lastName" placeholder="{{currentPerson.lastName}}">
+        </label>
+      </div>
+      <div class="list list-inset">
+        <label class="item item-input">
+          <span class="input-label">Number of seats</span>
+          <input type="number" ng-model="currentPerson.numSeats" ng-value="currentPerson.numSeats" placeholder="{{currentPerson.numSeats}}">
+        </label>
+      </div>
+      <div id="telephone_input" class="list list-inset">
+        <label class="item item-input">
+          <span class="input-label">Telephone</span>
+          <input type="tel" ng-model='currentPerson.telephone' ng-value="currentPerson.telephone" placeholder="{{currentPerson.telephone}}">
+        </label>
+      </div>
+      <!-- <div class="list list-inset">
+        <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="email" ng-model='currentList.list[thisOne].email' placeholder="{{currentList.list[thisOne].email}}">
+        </label>
+        <ion-checkbox ng-model="thing.recEmail">Recieve email deals?</ion-checkbox>
+      </div> -->
+      <div class="list list-inset">
+        <!-- <label class="item item-input">
+          <span class="input-label">Date</span>
+          <input type="date" ng-model="currentList.list[thisOne].date" placeholder="{{currentList.list[thisOne].date}}">
+        </label> -->
+        <label class="item item-input">
+          <span class="input-label">Time</span>
+          <input type="time" ng-model="currentPerson.timed" ng-value="currentPerson.timed" placeholder="{{currentPerson.timed}}">
+        </label>
+      </div>
+      <div class="button-bar">
+        <!-- <a class="button button-stable" ng-click="cancelEdit()">Cancel</a> -->
+        <a class="button button-balanced" ng-click="submitEdit($index)">Submit</a>
+    </div>
+  </ion-content>
+</ion-modal-view>

@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'app.controllers', 'starter.services','ngCordova'])
+angular.module('starter', ['ionic', 'app.controllers', 'starter.services','ngCordova','ngStorage'])
 
 .run(function($ionicPlatform,$cordovaStatusbar) {
   $ionicPlatform.ready(function() {
@@ -18,7 +18,8 @@ angular.module('starter', ['ionic', 'app.controllers', 'starter.services','ngCor
       // org.apache.cordova.statusbar required
       $cordovaStatusbar.overlaysWebView(true);
       //$cordovaStatusBar.style(1);
-      $cordovaStatusbar.styleColor('red');
+      // $cordovaStatusbar.styleColor('DarkstGreen');
+      $cordovaStatusbar.styleHex('#2db955');
     }
   });
 })
@@ -45,62 +46,34 @@ angular.module('starter', ['ionic', 'app.controllers', 'starter.services','ngCor
       templateUrl:"templates/updateReservationTMPL.html",
       controller:'updateReservationCtrl'
     })
+    .state('editReservation',{
+      url:'/editReservation',
+      templateUrl:'templates/editReservationHTML.html',
+      controller:'editReservationCtrl'
+    })
     .state('followUp',{
       url:'/followUp',
       templateUrl:"templates/followUpTMPL.html",
       controller:"followUpCtrl"
+    }).state('newOldRes',{
+      url:'/newOldRes',
+      templateUrl:"templates/newOldResTMPL.html",
+      controller:"newOldResCtrl"
+    }).state('settings',{
+      url:'/settings',
+      templateUrl:'templates/settingsTMPL.html',
+      controller:'settingsCtrl'
+    }).state('settingsResults',{
+      url:'/settingsResults',
+      templateUrl:'templates/settingsResultsTMPL.html',
+      controller:'settingsResultsCtrl'
+    }).state('editCust',{
+      url:'/editCust',
+      templateUrl:'templates/editCustTMPL.html',
+      controller:'editCustCtrl'
     });
-
-  // setup an abstract state for the tabs directive
-  //   .state('tab', {
-  //   url: "/tab",
-  //   abstract: true,
-  //   templateUrl: "templates/tabs.html"
-  // })
-  //
-  // // Each tab has its own nav history stack:
-  //
-  // .state('tab.dash', {
-  //   url: '/dash',
-  //   views: {
-  //     'tab-dash': {
-  //       templateUrl: 'templates/tab-dash.html',
-  //       controller: 'DashCtrl'
-  //     }
-  //   }
-  // })
-  //
-  // .state('tab.chats', {
-  //     url: '/chats',
-  //     views: {
-  //       'tab-chats': {
-  //         templateUrl: 'templates/tab-chats.html',
-  //         controller: 'ChatsCtrl'
-  //       }
-  //     }
-  //   })
-  //   .state('tab.chat-detail', {
-  //     url: '/chats/:chatId',
-  //     views: {
-  //       'tab-chats': {
-  //         templateUrl: 'templates/chat-detail.html',
-  //         controller: 'ChatDetailCtrl'
-  //       }
-  //     }
-  //   })
-  //
-  // .state('tab.account', {
-  //   url: '/account',
-  //   views: {
-  //     'tab-account': {
-  //       templateUrl: 'templates/tab-account.html',
-  //       controller: 'AccountCtrl'
-  //     }
-  //   }
-  // });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
-  $ionicConfigProvider.views.transition('android');
 
 });

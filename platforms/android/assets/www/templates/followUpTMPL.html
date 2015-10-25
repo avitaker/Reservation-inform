@@ -1,11 +1,39 @@
-<ion-view view-title="Follow Up">
+<ion-view view-title="New">
   <ion-content>
-    <div class="list list-inset" ng-repeat-start="thing in archiveList.list track by $index">
-      <div class="item item-divider">
-        {{thing.firstName}} {{thing.lastName}}
-      </div>
+    <div class="item item-divider">New Customer</div>
+    <div class="button-bar">
+      <a class="button button-block button-balanced" ng-click="newEntryClick()">New Customer Reservation</a>
     </div>
-    <div ng-repeat-end>
-    </div>
+    <div class = "list">
+      <div class = "item item-divider">Search Past Customers</div>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">First Name (exact spelling)</span>
+        <input type="text" placeholder="Search by first name" ng-model="searchObject.firstName">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Last Name (exact spelling)</span>
+        <input type="text" placeholder="Search by last name" ng-model="searchObject.lastName">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Telephone</span>
+        <input type="tel" placeholder="Search by telephone" ng-model="searchObject.telephone">
+      </label>
+   </div>
+   <div class="button-bar">
+     <a class="button button-assertive" ng-click="clearSearch()">Clear</a>
+     <a class="button button-positive" ng-click="buttonClick()">Search</a>
+   </div>
+   <div class="list">
+     <div class="item item-divider">Search Results</div>
+     <div class="item item-text-wrap" ng-show="searchActive" ng-repeat-start="result in archiveList.searchResults track by $index" ng-click="handOff($index)">
+       Name: {{result.firstName}} {{result.lastName}}<br>
+       Phone: {{result.telephone}}
+     </div>
+     <div ng-repeat-end>
+     </div>
+     <div class="item" ng-hide="searchActive"><p class="subdued">(Search results here)</p></div>
+     <div class="item" ng-show="foundResults"><p class="subdued">End of search results</p></div>
+     <div class="item item-text-wrap" ng-show="noResults" ng-click="newEntryClick()"><p>No results found (Click here to make new customer reservation)</p></div>
+   </div>
   </ion-content>
 </ion-view>

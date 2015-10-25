@@ -1,0 +1,73 @@
+<ion-view view-title="Manage/Batch">
+  <ion-content>
+    <div class="list">
+      <div class="item item-divider">Batch Actions for Current Reservations</div>
+      <div class="item item-text-wrap" ng-click="curResMassTextToggle()">
+        <h2>Send Mass Text Message to Current Reservations</h2>
+        <p>{{sendAllResSubTxt}}</p>
+      </div>
+      <div ng-show="curResMassTextShow">
+        <div class="list">
+          <label class="item item-input">
+            <textarea placeholder="Text body" ng-model='massTextCont.resMassTxt'></textarea>
+          </label>
+        </div>
+        <div class="button-bar">
+          <a class="button button-calm" ng-click = "batchCurConfirm()">Send to all</a>
+        </div>
+      </div>
+      <div class="item item-text-wrap" ng-click="showCurConfirm()">
+        <h2>Delete All</h2>
+        <p>Clear all current reservations (IRREVERSIBLE!)</p>
+      </div>
+
+      <div class="item item-divider">Past Customer Records Actions</div>
+      <div class="item item-text-wrap" ng-click="archMassTextToggle()">
+        <h2>Send Mass Text Message to Past Customers</h2>
+        <p>{{sendAllArchSubTxt}}</p>
+      </div>
+      <div ng-show="archMassTextShow">
+        <div class="list">
+          <label class="item item-input">
+            <textarea placeholder="Text body" ng-model='massTextCont.archMassTxt'></textarea>
+          </label>
+        </div>
+        <div class="button-bar">
+          <a class="button button-calm" ng-click = "batchArchConfirm()">Send to all</a>
+        </div>
+      </div>
+      <div class="item item-text-wrap" ng-click="searchOnclick()">
+        <h2>Search Past Customers</h2>
+        <p>{{searchText}}</p>
+      </div>
+      <div ng-show = "searchClick">
+        <div class = "list">
+          <label class="item item-input item-floating-label">
+          <span class="input-label">First Name (exact spelling)</span>
+          <input type="text" placeholder="Search by first name" ng-model="searchObject.firstName">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Last Name (exact spelling)</span>
+          <input type="text" placeholder="Search by last name" ng-model="searchObject.lastName">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Telephone</span>
+          <input type="tel" placeholder="Search by telephone" ng-model="searchObject.telephone">
+        </label>
+       </div>
+       <div class="button-bar">
+         <a class="button button-assertive" ng-click="clearSearch()">Clear</a>
+         <a class="button button-positive" ng-click="buttonClick()">Search</a>
+       </div>
+      </div>
+      <div class="item item-text-wrap" ng-click="chronOnclick()">
+        <h2>Chronological List</h2>
+        <p>Show all past customer records currently on file</p>
+      </div>
+      <div class="item item-text-wrap" ng-click="deleteAllOnClick()">
+        <h2>Delete All</h2>
+        <p>Clear all past customer records (IRREVERSIBLE!)</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

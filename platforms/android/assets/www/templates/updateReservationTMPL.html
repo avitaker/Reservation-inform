@@ -1,16 +1,18 @@
 <ion-view view-title="Update Reservations">
   <ion-content>
-    <div class="new-reserve list list-inset" ng-repeat-start="thing in currentList.list track by $index">
+    <div class="item item-text-wrap" ng-show="noReservations">There are no current reservations!</div>
+    <div class="new-reserve list list-inset" ng-repeat-start="thing in $storage.currPersonList track by $index">
       <div class="item item-divider">
-        {{thing.firstName}} {{thing.lastName}}
+        {{thing.firstName}} {{thing.lastName}}: {{thing.currStatus}}
         <!-- <ion-checkbox ng-repeat="item in currentList" ng-model="item.checked" ng-checked="item.checked">{{item.}}</ion-checkbox> -->
       </div>
       <!-- <div class="item">
         {{thing.telephone}}
       </div> -->
       <ion-radio ng-model="thing.ready" ng-value='true'>Reservation ready</ion-radio>
-      <ion-radio ng-model="thing.issueActive" ng-value='true'>Issue in reservation</ion-radio>
-      <ion-radio ng-model="thing.issueActive" ng-value="false" ng-show="thing.issueActive">Issue resolved</ion-radio>
+      <!-- <ion-radio ng-model="thing.issueActive" ng-value='true'>Issue in reservation</ion-radio>
+      <ion-radio ng-model="thing.issueActive" ng-value="false" ng-show="thing.issueActive">Issue resolved</ion-radio> -->
+      <ion-radio ng-model="thing.edited" ng-value="true" ng-click="openEdit2($index)">Edit Reservation</ion-radio>
       <ion-radio ng-model="thing.cancelled" ng-value='true'>Cancel Reservation</ion-radio>
       <button class="button button-block button-balanced" ng-click="delete($index)">Submit</button>
     </div>

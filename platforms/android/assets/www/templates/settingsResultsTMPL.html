@@ -1,0 +1,22 @@
+<ion-view view-title="Home">
+  <ion-content>
+    <div class="list card" ng-repeat-start="item in resultArray track by $index">
+      <div class="item">
+        <b>{{item.firstName}} {{item.lastName}}</b>
+        <p class="subdued">{{item.telephone}}</p>
+      </div>
+      <div class="item tabs tabs-secondary">
+        <a class="tab-item assertive" ng-click="deleteOnclick($index)">
+          <i class="icon ion-trash-b"></i>
+          Delete
+        </a>
+        <a class="tab-item royal" ng-click="goHere($index)">
+          <i class="icon ion-edit"></i>
+          Edit
+        </a>
+      </div>
+    </div>
+    <div ng-repeat-end>
+    </div>
+  </ion-content>
+</ion-view>
