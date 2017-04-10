@@ -3,7 +3,7 @@ App to create restaurant reservation with customer contact info, manage reservat
 
 ## Installation and Usage
 - Download the repository
-- Ensure that Ionic Framework is installed
+- Ensure that Ionic Framework is [installed](https://ionicframework.com/getting-started)
 - Navigate to repository folder in terminal or command line
 - `ionic serve`
 ### Create mobile builds
