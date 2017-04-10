@@ -6,6 +6,9 @@ App to create restaurant reservation with customer contact info, manage reservat
 - Ensure that Ionic Framework is installed
 - Navigate to repository folder in terminal or command line
 - `ionic serve`
+### Create mobile builds
+- Android: `cordova build --release android`
+- iOS: `ionic build ios --release`
 
 ## Issues
 - **Currently not under development**
